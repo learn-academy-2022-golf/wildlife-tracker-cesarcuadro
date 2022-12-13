@@ -47,12 +47,30 @@ Branch: sighting-crud-actions
 
 Acceptance Criteria
 
-Create a resource for animal sightings with the following information: latitude, longitude, date
+Create a resource for animal sightings with the following information: latitude, longitude, date ✅
+$ rails generate resource Sighting longitude:string latitude:string date:string animal_id:integer
+$ rails db:migrate
 Hint: An animal has_many sightings (rails g resource Sighting animal_id:integer ...)
 Hint: Date is written in Active Record as yyyy-mm-dd (“2022-07-28")
-Can create a new animal sighting in the database
-Can update an existing animal sighting in the database
-Can remove an animal sighting in the database
+Can create a new animal sighting in the database ✅
+```ruby
+[#<Sighting:0x0000000111b96a88                                  
+  id: 1,                                                        
+  longitude: "69NE",                                            
+  latitude: "96SW",                                             
+  date: "2022-07-28",                                           
+  animal_id: 2,                                                 
+  created_at: Tue, 13 Dec 2022 22:06:54.471689000 UTC +00:00,   
+  updated_at: Tue, 13 Dec 2022 22:06:54.471689000 UTC +00:00>] 
+```
+Can update an existing animal sighting in the database ✅
+{
+    "longitude": "123NE",
+    "latitude": "69SW",
+    "date": "2022-08-18",
+    "animal_id": 3
+}
+Can remove an animal sighting in the database ✅
 
 # Story 3: In order to see the wildlife sightings, as a user of the API, I need to run reports on animal sightings.
 

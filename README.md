@@ -78,7 +78,7 @@ Branch: animal-sightings-reports
 
 Acceptance Criteria
 
-Can see one animal with all its associated sightings
+Can see one animal with all its associated sightings ✅
 Hint: Checkout this example on how to include associated records
 Can see all the all sightings during a given time period
 Hint: Your controller can use a range to look like this:
@@ -93,3 +93,32 @@ end
 Hint: Be sure to add the start_date and end_date to what is permitted in your strong parameters method
 Hint: Utilize the params section in Postman to ease the developer experience
 Hint: Routes with params
+```JSON
+{
+    "id": 3,
+    "common_name": "weasel",
+    "scientific_binomial": "mustela",
+    "created_at": "2022-12-13T19:55:45.567Z",
+    "updated_at": "2022-12-13T19:55:45.567Z",
+    "sightings": [
+        {
+            "id": 2,
+            "longitude": "96NE",
+            "latitude": "69SW",
+            "date": "2022-08-18",
+            "animal_id": 3,
+            "created_at": "2022-12-13T22:19:22.043Z",
+            "updated_at": "2022-12-13T22:19:22.043Z"
+        },
+        {
+            "id": 3,
+            "longitude": "123NE",
+            "latitude": "69SW",
+            "date": "2022-08-18",
+            "animal_id": 3,
+            "created_at": "2022-12-13T22:20:21.979Z",
+            "updated_at": "2022-12-13T22:38:27.818Z"
+        }
+    ]
+}
+```

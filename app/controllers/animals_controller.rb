@@ -7,7 +7,7 @@ class AnimalsController < ApplicationController
 
     def show
         animals = Animal.find(params[:id])
-        render json: animals
+        render json: animals, include: :sightings
     end
 
     def create
@@ -40,7 +40,7 @@ class AnimalsController < ApplicationController
 
     private
     def animal_params
-        params.require(:animal).permit(:common_name, :scientific_binomial)
+        params.require(:animal).permit(:common_name, :scientific_binomial, :sighting)
     end
 
 end
